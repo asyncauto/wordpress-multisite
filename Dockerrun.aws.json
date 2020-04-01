@@ -1,0 +1,26 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "wordpress",
+    "Update": "true"
+  },
+  "Volumes": [
+    {
+      "HostDirectory": "/var/www/html/wp-content/",
+      "ContainerDirectory": "/var/www/html/wp-content/"
+    },
+    {
+      "HostDirectory": "/var/app/current/.htaccess",
+      "ContainerDirectory": "/var/www/html/.htaccess"
+    },
+    {
+      "HostDirectory": "/var/app/current/uploads.ini",
+      "ContainerDirectory": "/usr/local/etc/php/conf.d/uploads.ini"
+    }
+  ],
+  "Ports": [
+    {
+      "ContainerPort": "80"
+    }
+  ]
+}
